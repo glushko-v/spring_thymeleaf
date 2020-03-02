@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>This is home page</h1>
+<table>
+    <thead>
+    <tr>
+        <th> ID</th>
+        <th> User</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="user : ${users}">
+        <td><span th:text="${user.id}"> ID </span></td>
+        <td><span th:text="${user.username}"> User </span></td>
+        <td>
+            <form th:action="@{/home/delete/{id}(id=${user.id})}">
+                <button>
+                    <img alt="Delete" src="/com/src/main/resources/img/delete.png" style="vertical-align: middle">
+                </button>
+            </form>
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

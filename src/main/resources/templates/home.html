@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <h1>This is home page</h1>
@@ -21,14 +23,18 @@
         <td>
             <form th:action="@{/home/delete/{id}(id=${user.id})}">
                 <button>
-                    <img alt="Delete" src="/com/src/main/resources/img/delete.png" style="vertical-align: middle">
+                    <img alt="" th:src="@{../img/untitled.jpg}" src="../img/untitled.jpg" style="vertical-align: middle" width="15" >
+                    delete
                 </button>
             </form>
         </td>
 
+        <img alt="" src="../img/untitled.jpg" th:attr="src=@{}" style="vertical-align: middle">
+
 
     </tr>
     </tbody>
+    <form>Log Out</form>
 </table>
 </body>
 </html>
